@@ -4,522 +4,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Document</title> -->
-    <title>My Portfolio</title>
+    <title>Niranjan P. Kulkarni | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="icon" href="assets/logo-nk.png" type="image/png"> <!-- Add your favicon -->
 </head>
 
-<body>
+<body class="light-theme"> <!-- Default to light theme -->
     <nav id="desktop-nav">
-        <div class="logo">Niranjan Kulkarni</div>
-        <!-- &lt;!-- <button class="theme">Theme</button> --&gt; -->
+        <div class="logo-container">
+            <!-- <img src="assets/logo-nk.png" alt="Logo" class="nav-logo"> -->
+            <div class="logo">Niranjan P. Kulkarni</div>
+        </div>
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Skills Set</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Niranjan Kulkarni</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Skills</a></li>
+                <li><a href="#work-experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#work-experience">Professional Experience</a></li>
-                <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="theme-toggle-desktop" class="theme-toggle-btn" title="Toggle theme">
+                        <img src="./assets/sun.png" alt="Toggle Theme" id="theme-icon-desktop" class="theme-icon">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo-container">
+            <!-- <img src="assets/logo-nk.png" alt="Logo" class="nav-logo"> -->
+            <div class="logo">Niranjan P. Kulkarni</div>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMobileMenu()"> <!-- Changed function name for clarity -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-menu-links"> <!-- Changed class name for clarity -->
+                <ul>
+                    <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMobileMenu()">Skills</a></li>
+                    <li><a href="#work-experience" onclick="toggleMobileMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="toggleMobileMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle-mobile" class="theme-toggle-btn-mobile" title="Toggle theme">
+                            <img src="./assets/sun.png" alt="Toggle Theme" id="theme-icon-mobile" class="theme-icon">
+                            <span>Toggle Theme</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img decoding="async" id="profile1" src="assets/profile-pic.jpg" alt="John Doe's profile picture"
-                title="John Doe" />
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Niranjan Kulkarni</h1>
-            <p class="section__text__p2">Software Developer</p>
-            <div class="btn-container">
-                <a href="assets/Niranjan Resume A.pdf" target="_blank" rel="noopener">
-                    <button class="btn btn-color-2">
-                        See Resume
 
-                    </button>
-                </a>
-                <button class="btn btn-color-1" onclick="window.location.hash = '#contact'">
-                    Contact Info
-                  </button>
+    <main>
+        <section id="profile">
+            <div class="section__pic-container">
+                <img decoding="async" id="profile1" src="assets/profile-pic.jpg" alt="Niranjan Kulkarni's profile picture"
+                    title="Niranjan P. Kulkarni" />
             </div>
-            <div id="socials-container">
-                <a target="_blank" href="https://www.linkedin.com/in/developer-niranjan/" rel="noopener">
-                    <img decoding="async" src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" />
-                </a>
-
-                <a target="_blank" href="https://github.com/Sarkaris" rel="noopener">
-                    <img decoding="async" src="./assets/github.png" alt="My Github profile" class="icon" />
-                </a>
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title" id="aboutTitle">About Me</h1>
-        <div class="section-container">
-
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img decoding="async" src="./assets/experience.png" alt="Experience icon" class="icon" />
-                        <h3>Educational Experience</h3>
-                        <p>2+ years <br />Frontend/Backend Development</p>
-                    </div>
-                    <div class="details-container">
-                        <img decoding="async" src="./assets/education.png" alt="Education icon" class="icon" />
-                        <h3>Education</h3>
-                        <p>Bachelor of Technology<br /></p>
-                        <p>PVPIT Budhgaon</p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p><span class="highlight"></span>
-                        I'm <span class="highlight">Software Developer</span> from India, I build apps with
-                        a focus on
-                        <span class="highlight">JavaScript, React, NodeJS &amp; NextJS, MYSQL</span> considering
-                        all the aspects of <span class="highlight">UI/UX</span> . I enjoy turning complex problems into
-                        simple,
-                        beautiful and intuitive designs. <br> A
-                        <span class="highlight">Software Engineer</span> , who loves to solve problems.
-
-                        I am having an experience of building high-performing, responsive, beautiful web applications to
-                        deliver a
-                        unique, intuitive user experience that works, also <span class="highlight"> keen interest in
-                            UI/UX</span>
-                        with some nice designing skills. <br> I
-                        am a well-trained teammate who loves to share ideas and prioritizes communication in order to
-                        achieve goals
-                        within the set deadlines. I enjoy being challenged and working on projects that require me to
-                        step outside
-                        of my comfort zone.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" /> -->
-    </section>
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Skills Set</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Programming</h2>
-                    <div class="article-container">
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Data Structures & Algorithem</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Java</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Python</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>C language</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Development</h2>
-                    <div class="article-container">
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>HTML5</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>CSS3</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>React</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>NextJS</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>MySQL & MongoDb</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Tailwind </h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Bootstrap </h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>MERN Stack</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Development Tools &amp; Softwares</h2>
-                    <div class="article-container">
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Git</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>GitHub</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Figma</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Canva</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>Vercel</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>CorelDraw</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article id="lastSkill">
-                            <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                            <div>
-                                <h3>VS Code</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <img decoding="async" src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" /> -->
-    </section>
-
-    <!-- project section  -->
-
-    <section id="projects">
-        <p class="section__text__p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/projects/proj1.png" alt="Project 3" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">E-commerce Store</h2>
-                    <div class="btn-container">
-                        <a target="_blank" href="https://github.com/" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Github
-                            </button>
-                        </a>
-
-                        <a target="_blank" href="https://myjarvo.com/" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Live Demo
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/projects/proj2.png" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">AI Image Generator</h2>
-                    <div class="btn-container">
-                        <a href="https://github.com/Sarkaris/Jarvis-AI-Image-generator" target="_blank" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Github
-                            </button>
-                        </a>
-                        <a target="_blank" href="https://sarkaris.github.io/Jarvis-AI-Image-generator/" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Live Demo
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <!-- <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/projects/proj1.jpg" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project 2</h2>
-                    <div class="btn-container">
-                        <a href="https://github.com/nikhilkamble02/" target="_blank" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Github
-                            </button>
-                        </a>
-                        <a target="_blank" href="https://github.com" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Live Demo
-                            </button>
-                        </a>
-                    </div>
-                </div> -->
-                <!-- <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/projects/proj1.jpg" alt="Project 2" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title" style="font-size: 1.2rem">Project 3</h2>
-                    <div class="btn-container">
-                        <a href="https://github.com/" target="_blank" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Github
-                            </button>
-                        </a>
-                        <a target="_blank" href="https://github.com/" rel="noopener">
-
-                            <button class="btn btn-color-2 project-btn">
-                                Live Demo
-                            </button>
-                        </a>
-                        &lt;!-- <button class="btn btn-color-2 project-btn">
-                            Github
+            <div class="section__text">
+                <p class="section__text__p1">Hello, I'm</p>
+                <h1 class="title main-title">Niranjan P. Kulkarni</h1>
+                <p class="section__text__p2">Full-Stack Developer</p>
+                <div class="btn-container">
+                    <a href="assets/Niranjan_Kulkarni_Resume.pdf" target="_blank" rel="noopener">
+                        <button class="btn btn-color-1">
+                            View Resume
                         </button>
-                        <button disabled class="btn btn-color-2 project-btn">
-                            Live Demo
-                        </button> --&gt;
-                    </div>
-                </div> -->
-
+                    </a>
+                    <button class="btn btn-color-2" onclick="window.location.hash = '#contact'">
+                        Contact Info
+                    </button>
+                </div>
+                <div id="socials-container">
+                    <a target="_blank" href="https://www.linkedin.com/in/developer-niranjan/" rel="noopener" title="LinkedIn">
+                        <img decoding="async" src="./assets/linkedin.png" alt="LinkedIn" class="icon social-icon" />
+                    </a>
+                    <a target="_blank" href="https://github.com/Sarkaris" rel="noopener" title="GitHub">
+                        <img decoding="async" src="./assets/github.png" alt="Github" class="icon social-icon" />
+                    </a>
+                    <a target="_blank" href="https://leetcode.com/u/developer-niranjan/" rel="noopener" title="LeetCode">
+                        <img decoding="async" src="./assets/leetcode.png" alt="LeetCode" class="icon social-icon" />
+                    </a>
+                </div>
             </div>
-        </div>
-        <!-- <img decoding="async" src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" /> -->
+        </section>
 
-
-
-
-
-    </section>
-
-    <!-- work experiance -->
-<!-- Work Experience Section -->
-<section id="work-experience">
-    <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <!-- Freelance Work -->
-        <div class="experience-card">
-            <h3>Software Developer | Freelance</h3>
-            <p class="date">2023 - Present</p>
-            <ul>
-                <li>Developed high-performance web applications using <strong>JavaScript, React, Next.js, and Node.js</strong>.</li>
-                <li>Designed and implemented responsive UI/UX with <strong>Tailwind CSS, Bootstrap, and Figma</strong>.</li>
-                <li>Built and optimized <strong>MERN stack</strong> projects for scalability and performance.</li>
-                <li>Integrated <strong>MySQL & MongoDB</strong> databases for efficient backend solutions.</li>
-            </ul>
-        </div>
-
-        <!-- Internship Experience -->
-        <div class="experience-card">
-            <h3>Web Developer Intern | MFCI INDIA Pvt. Ltd.</h3>
-            <p class="date">Sep 2023 - Nov 2023</p>
-            <ul>
-                <li>Implemented cost-effective solutions, reducing project expenses by <strong>20%</strong>.</li>
-                <li>Streamlined workflows, enhancing efficiency by <strong>25%</strong>.</li>
-                <li>Led a team in delivering a complex project within budget and on time.</li>
-                <li>Worked with <strong>React, Node.js, Express.js, and MySQL</strong> to develop scalable applications.</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-
-    <!-- blog section  -->
-    <!-- <section id="blogs">
-        <p class="section__text__p1">Have a Look on My Recent</p>
-        <h1 class="title">Blogs</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/blogs/blog demo.png" alt="Project 1" class="blog-img" />
+        <section id="about">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About Me</h1>
+            <div class="section-container-about">
+                <div class="about-details-container">
+                    <div class="about-cards-container">
+                        <div class="details-container about-card">
+                            <img decoding="async" src="./assets/experience.png" alt="Experience icon" class="icon about-icon" />
+                            <h3>Experience</h3>
+                            <p>2+ years project experience<br />Full-Stack Development</p>
+                        </div>
+                        <div class="details-container about-card">
+                            <img decoding="async" src="./assets/education.png" alt="Education icon" class="icon about-icon" />
+                            <h3>Education</h3>
+                            <p>B.E. Computer Science<br />(2022 – 2026)</p>
+                            <p>PVPIT, Budhgaon, India</p>
+                        </div>
                     </div>
-                    <h2 class="experience-sub-title project-title" style="font-size:1.55rem">"Blog Title 1"</h2>
-                    <div class="btn-container">
-                        <a target="_blank" href="https://medium.com/" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Read
-                            </button>
-                        </a>
-                        &lt;!-- <button class="btn btn-color-2 project-btn">
-                            Live Demo
-                        </button> --&gt;
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/blogs/blog demo.png" alt="Project 2" class="blog-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">"Blog Title 2"</h2>
-                    <div class="btn-container">
-                        <a target="_blank" href="https://medium.com/" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Read
-                            </button>
-                        </a>
-                        &lt;!-- <button class="btn btn-color-2 project-btn">
-                            Live Demo
-                        </button> --&gt;
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img decoding="async" src="./assets/blogs/blog demo.png" alt="Project 3" class="blog-img" />
-                    </div>
-
-                    <h2 class="experience-sub-title project-title">"Blog Title 3"</h2>
-                    <div class="btn-container">
-                        <a target="_blank" href="https://medium.com/" rel="noopener">
-                            <button class="btn btn-color-2 project-btn">
-                                Read
-                            </button>
-                        </a>
-                        &lt;!-- <button class="btn btn-color-2 project-btn">
-                            Live Demo
-                        </button> --&gt;
+                    <div class="text-container">
+                        <p>
+                            Highly motivated Computer Science student (B.E. 2026) specializing in <span
+                                class="highlight">Full-Stack Development (MERN, Java, MySQL)</span>. Proven foundation
+                            in algorithms & data structures (Top 5% LeetCode, AIR 16 - IIT Roorkee).
+                            With <span class="highlight">2+ years of project experience</span>, I develop scalable web
+                            apps, optimize APIs, and contribute to AI projects. Passionate about tackling complex technical
+                            challenges and building impactful, large-scale software solutions.
+                        </p>
+                        <div class="achievements-languages">
+                            <div>
+                                <p style="margin-top: 1rem;"><strong>Key Achievements:</strong></p>
+                                <ul>
+                                    <li>LeetCode Top 5% (205+ problems)</li>
+                                    <li>IIT Roorkee Coding Contest – AIR 16</li>
+                                    <li>Engineering Excellence Award – MFCI INDIA</li>
+                                    <li>ELESA Cert. – Walchand College (Comp. Prog.)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="margin-top: 1rem;"><strong>Languages:</strong></p>
+                                <ul>
+                                    <li>English (Fluent)</li>
+                                    <li>Marathi (Native)</li>
+                                    <li>Hindi (Fluent)</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section> -->
+        </section>
 
-
-    <!-- contact section  -->
-
-    <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img decoding="async" src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:johndoe123@gmail.com">niranjankulkarnink@gmail.com</a></p>
+        <section id="experience">
+            <p class="section__text__p1">Explore My</p>
+            <h1 class="title">Skills</h1>
+            <div class="skills-container">
+                <div class="details-container skills-card">
+                    <h2 class="experience-sub-title">Programming Languages</h2>
+                    <div class="article-container">
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Java</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>JavaScript (ES6+)</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Python</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>C language</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Data Structues & Alogrithems</h3><p>Experienced</p></div></article>
+                    </div>
+                </div>
+                <div class="details-container skills-card">
+                    <h2 class="experience-sub-title">Web Development</h2>
+                    <div class="article-container">
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>HTML5 & CSS3</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>React.js</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Next.js</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Node.js</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Express.js</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>RESTful APIs</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Tailwind CSS</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Bootstrap</h3><p>Experienced</p></div></article>
+                    </div>
+                </div>
+                <div class="details-container skills-card">
+                    <h2 class="experience-sub-title">Databases & Storage</h2>
+                    <div class="article-container">
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>MySQL</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>MongoDB</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>SupaBase</h3><p>Experienced</p></div></article>
+                    </div>
+                </div>
+                <div class="details-container skills-card">
+                    <h2 class="experience-sub-title">Tools & Methodologies</h2>
+                    <div class="article-container">
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Git & GitHub</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>VS Code</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Postman</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Data Structures</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Algorithms</h3><p>Experienced</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>System Design</h3><p>Intermediate</p></div></article>
+                        <article><img src="./assets/checkmark.png" alt="Skill icon" class="icon skill-icon" /><div><h3>Agile Dev</h3><p>Intermediate</p></div></article>
+                    </div>
+                </div>
             </div>
-            <div class="contact-info-container">
-                <img decoding="async" src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p><a target="_blank" href="https://www.linkedin.com/in/developer-niranjan/" rel="noopener">LinkedIn</a></p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- footer section  -->
+        <section id="work-experience">
+            <p class="section__text__p1">My Professional Journey</p>
+            <h1 class="title">Experience</h1>
+            <div class="experience-container">
+                <div class="experience-card">
+                    <h3>Software Development Intern | MFCI INDIA Pvt. Ltd.</h3>
+                    <p class="date">Sep 2023 – Nov 2023</p>
+                    <ul>
+                        <li>Developed full-stack apps (React, Node.js, MySQL), boosting project delivery by 30%.</li>
+                        <li>Optimized RESTful APIs, reducing server response time by 20% & improving scalability.</li>
+                        <li>Led a team of 3 to build an internal tool automating report generation, saving 10+ hrs/week.</li>
+                        <li>Implemented JWT authentication, enhancing platform security.</li>
+                        <li>Received "Engineering Excellence Award" for project contributions.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Relevant Coursework & Projects | PVPIT (2022 - 2026)</h3>
+                    <ul>
+                        <li><strong>Courses:</strong> Data Structures & Algorithms, Web Dev, System Design, OS, Networks.</li>
+                        <li>Active in coding contests & hackathons; Top 5% on LeetCode.</li>
+                        <li>Developed MERN stack, Java, and MySQL projects (academic & personal).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <p class="section__text__p1">Browse My Recent</p>
+            <h1 class="title">Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img decoding="async" src="./assets/projects/proj1.png" alt="Jarvo Cotton E-commerce" class="project-img" />
+                    </div>
+                    <h2 class="project-title-card">Jarvo Cotton – E-commerce</h2> <!-- Unique class for project card titles -->
+                    <p class="project-tech">Next.js, MySQL, OAuth, Tailwind CSS</p>
+                    <p class="project-description">High-performance e-commerce site with OAuth. Optimized for 20% faster data retrieval.</p>
+                    <div class="btn-container">
+                        <a target="_blank" href="https://myjarvo.com/" rel="noopener"><button class="btn btn-color-2 project-btn">Live Demo</button></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                     <div class="project-img-container">
+                        <img decoding="async" src="./assets/projects/blog.png" alt="Next.js Blogging Website" class="project-img" />
+                    </div>
+                    <h2 class="project-title-card">Multilingual Blog Platform</h2>
+                    <p class="project-tech">Next.js, MySQL, Tailwind, Quill, DOMPurify</p>
+                    <p class="project-description">SEO-friendly blog (Marathi, Hindi, English) with SSG/ISR & admin panel.</p>
+                    <div class="btn-container">
+                        <a target="_blank" href="https://blogging-website-nine-khaki.vercel.app/" rel="noopener"><button class="btn btn-color-2 project-btn">Live Demo</button></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                     <div class="project-img-container">
+                        <img decoding="async" src="./assets/projects/proj-siliconminds.png" alt="Silicon Minds Website" class="project-img" />
+                    </div>
+                    <h2 class="project-title-card">Silicon Minds Website</h2>
+                    <p class="project-tech">HTML, CSS, JS, WhatsApp Int.</p>
+                    <p class="project-description">Responsive company site with WhatsApp. 35% faster load via SEO & performance opt.</p>
+                    <div class="btn-container">
+                        <a target="_blank" href="https://siliconminds.tech" rel="noopener"><button class="btn btn-color-2 project-btn">Live Demo</button></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img decoding="async" src="./assets/projects/proj2.png" alt="Jarvis AI Image Generator" class="project-img" />
+                    </div>
+                    <h2 class="project-title-card">Jarvis AI Image Generator</h2>
+                    <p class="project-tech">HTML, CSS, JavaScript, AI API</p>
+                    <p class="project-description">AI-powered tool for custom graphics. Reduced image gen. time by 40% via API opt.</p>
+                    <div class="btn-container">
+                        <a href="https://github.com/Sarkaris/Jarvis-AI-Image-generator" target="_blank" rel="noopener"><button class="btn btn-color-1 project-btn">Github</button></a>
+                        <a target="_blank" href="https://sarkaris.github.io/Jarvis-AI-Image-generator/" rel="noopener"><button class="btn btn-color-2 project-btn">Live Demo</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <p class="section__text__p1">Get in Touch</p>
+            <h1 class="title">Contact Me</h1>
+            <div class="contact-info-upper-container">
+                <div class="contact-info-container">
+                    <img decoding="async" src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                    <p><a href="mailto:kulkarniniranjan99@gmail.com">kulkarniniranjan99@gmail.com</a></p>
+                </div>
+                <div class="contact-info-container">
+                    <img decoding="async" src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                    <p><a target="_blank" href="https://www.linkedin.com/in/developer-niranjan/" rel="noopener">LinkedIn</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <nav>
             <div class="nav-links-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Skills Set</a></li>
-                    <li><a href="#work-experience">Professional Experience</a></li>
+                    <li><a href="#experience">Skills</a></li>
+                    <li><a href="#work-experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
-        <p>Copyright &#169; 2024 @developerniranjan. All Rights Reserved.</p>
+        <p>Copyright © <span id="copyright-year"></span> Niranjan P. Kulkarni. All Rights Reserved.</p>
+        <p><a href="https://github.com/Sarkaris" target="_blank" rel="noopener" class="portfolio-link">
+            Developer-Niranjan
+        </a></p>
     </footer>
-</body>
-<script src="script.js"></script>
 
+    <script src="script.js"></script>
+</body>
 </html>
